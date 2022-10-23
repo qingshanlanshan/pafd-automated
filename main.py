@@ -12,6 +12,9 @@ import io
 import numpy
 from PIL import Image
 from PIL import ImageEnhance
+from random import randint
+from time import sleep
+
 
 from requests import session, post, adapters
 adapters.DEFAULT_RETRIES = 5
@@ -292,6 +295,7 @@ def get_account():
 
 
 if __name__ == '__main__':
+    sleep(randint(1,5*3600))
     uid, psw = get_account()
     # print(uid, psw)
     zlapp_login = 'https://uis.fudan.edu.cn/authserver/login?' \
